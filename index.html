@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OnlinePalimos</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OnlinePalimos</title>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H87QDWEFC6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-H87QDWEFC6');
-    </script>
+  <!-- Confetti JS -->
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
 
-    <!-- Confetti JS -->
-    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header id="main">
+    <h1>💸 RICH KID KA NO, PENGE GCASH 💸</h1>
+  </header>
 
-    <!-- Your stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header id="main">
-      <h1>💸 RICH KID KA NO, PENGE GCASH 💸</h1>
-    </header>
+  <main>
+    <canvas id="confetti-canvas"></canvas>
 
-    <main>
-      <canvas id="confetti-canvas"></canvas>
+    <div class="gif-container">
+      <img id="gif" src="https://uploads.onecompiler.io/43v5nyjh9/3xsprh8sp/pls.gif" alt="Please" />
+    </div>
 
-      <div class="gif-container">
-        <img id="gif" src="https://uploads.onecompiler.io/43v5nyjh9/3xsprh8sp/pls.gif" alt="Please" />
-      </div>
+    <div class="button-container">
+      <button id="no-button">No 😤</button>
+      <button id="yes-button">Yes 😍</button>
+    </div>
+  </main>
 
-      <div class="button-container">
-        <button id="no-button">No 😤</button>
-        <button id="yes-button">Yes 😍</button>
-      </div>
-    </main>
+  <section id="anon-form" class="anon-container">
+    <h2>Send me Ratings🙏🤣</h2>
+    <p class="desc">Share your Rating below — 100% anonymous, only the developer can read it.</p>
+    <form action="https://formspree.io/f/mgvnggoq" method="POST" id="messageForm">
+      <textarea name="message" rows="3" placeholder="Type your message here..." required></textarea>
+      <button type="submit">Send Message ✉️</button>
+      <p id="thank-you" class="thank-you">✅ Message sent! Thank you 💖</p>
+    </form>
+  </section>
 
-    <footer>
-      <p>© 2025 OnlinePalimos | Made with  by Zynrc</p>
-    </footer>
+  <footer>
+    <p>© 2025 OnlinePalimos | Made by <span id="devName">Zynrc</span></p>
+  </footer>
 
-    <!-- ✅ Link to your JavaScript here -->
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
