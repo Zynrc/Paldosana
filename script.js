@@ -5,7 +5,7 @@ const thankYouMsg = document.getElementById("thank-you");
 
 // ===== NO BUTTON =====
 let hoverCount = 0;
-const messages = ["Ano ayaw?", "Sige na rahh 😭", "Jay naa", "Ano wala?", "G na pls 😩"];
+const messages = ["Ano ayaw?", "Sige na rahh 😭", "Jay naa", "Ano wala?", "G na pls 😩", "ano wala?", "ano ayaw?", "gusto tap", "bigay ayaw?", "bala ka jan!"];
 noButton.addEventListener("mouseover", () => {
   hoverCount++;
   if (hoverCount <= messages.length) {
@@ -13,7 +13,7 @@ noButton.addEventListener("mouseover", () => {
     msg.innerText = messages[hoverCount-1];
     Object.assign(msg.style, {
       position:"fixed",
-      top:"90px",   // sticky sa taas
+      top:"90px",
       left:"50%",
       transform:"translateX(-50%)",
       color:"#fff",
@@ -30,7 +30,6 @@ noButton.addEventListener("mouseover", () => {
     setTimeout(()=>{msg.style.opacity="0"; setTimeout(()=>msg.remove(),500)},2500);
   }
 
-  // Move button
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const footerHeight = document.querySelector("footer").offsetHeight;
@@ -67,10 +66,10 @@ yesButton.addEventListener("click", () => {
   qrContainer.style.position = "relative";
   qrContainer.style.textAlign = "center";
   qrContainer.style.marginTop = "50px";
+  qrContainer.style.zIndex = "1001"; // <- para hindi ma-block ng confetti
 
-  // YON SALAMAT message on top of QR
   let p = document.createElement("p");
-  p.innerText = "YUUN Ohhh Eyy SALAMAT ETO GCASH KO 143";
+  p.innerText = "YUUN OhhhEyy  SALAMAT ETO GCASH KO 143";
   Object.assign(p.style, {
     fontSize:"2rem",
     fontWeight:"bold",
@@ -80,7 +79,6 @@ yesButton.addEventListener("click", () => {
   });
   qrContainer.appendChild(p);
 
-  // QR image
   let qr = document.createElement("img");
   qr.src = "https://uploads.onecompiler.io/43v5nyjh9/3xsprh8sp/Gcash%20ko.png";
   Object.assign(qr.style,{
@@ -92,9 +90,10 @@ yesButton.addEventListener("click", () => {
 
   anonForm.before(qrContainer);
 
-  // Ensure Anonymous form stays at bottom
-  anonForm.style.position="relative";
-  anonForm.style.marginTop="100px";
+  // Ensure Anonymous form stays at bottom and clickable
+  anonForm.style.position = "relative";
+  anonForm.style.marginTop = "100px";
+  anonForm.style.zIndex = "1002"; // <- pinakamataas para ma-click
 });
 
 // ===== ANONYMOUS FORM =====
